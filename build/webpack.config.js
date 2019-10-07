@@ -8,6 +8,14 @@ module.exports = {
     path: path.resolve(__dirname, "../dist"),
     filename: "[name].[hash].js"
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: "babel-loader"
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html")
