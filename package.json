@@ -4,7 +4,8 @@
   "description": "webpack4 for react16",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config build/webpack.config.js"
+    "build": "webpack --config build/webpack.config.js",
+    "start": "webpack-dev-server --config build/webpack.dev.js --watch"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: path.resolve(__dirname, "../src/index.js"),
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -17,10 +16,14 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, "../dist"),
+    compress: true,
+    port: 4000
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html")
-    }),
-    new CleanWebpackPlugin()
+    })
   ]
 };
